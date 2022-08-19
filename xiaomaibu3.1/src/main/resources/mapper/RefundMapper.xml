@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.xiaoxiz.xiaomaibu.dao.RefundDao"    >
+    <!-- 填写数据库里实例Person对应的表的表名 -->
+    <!-- id属性填写Dao文件里的函数名称 xxType是参数或是结果的类型根据情况填写 -->
+    <!-- 查询所有   -->
+   <insert id="insert">
+       insert into refund(refundno,orderno,info,time,status) values (#{refundno},#{orderno},#{info},#{time},#{status})
+   </insert>
+    <select id="getRefund" resultType="com.xiaoxiz.xiaomaibu.bean.Refund">
+        select * from refund where orderno = #{orderno}
+    </select>
+    <update id="update">
+        update refund set info = #{info},time =#{time},status = #{status} where orderno=#{orderno}
+    </update>
+    <delete id="delete">
+        delete from refund where orderno = #{orderno}
+    </delete>
+</mapper>

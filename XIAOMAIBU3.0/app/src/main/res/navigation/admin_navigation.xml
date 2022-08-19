@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_navigation"
+    app:startDestination="@id/adminFirstFragment">
+
+    <fragment
+        android:id="@+id/adminFirstFragment"
+        android:name="com.example.xiaomaibu.AdminFirstFragment"
+        android:label="管理员主页面"
+        tools:layout="@layout/fragment_admin_first" />
+    <fragment
+        android:id="@+id/adminSecondFragment"
+        android:name="com.example.xiaomaibu.AdminSecondFragment"
+        android:label="发货"
+        tools:layout="@layout/fragment_admin_second" />
+    <fragment
+        android:id="@+id/adminThirdFragment"
+        android:name="com.example.xiaomaibu.AdminThirdFragment"
+        android:label="到货"
+        tools:layout="@layout/fragment_admin_third" />
+    <fragment
+        android:id="@+id/adminFourthFragment"
+        android:name="com.example.xiaomaibu.adminFourthFragment"
+        android:label="退款处理"
+        tools:layout="@layout/fragment_admin_fourth" />
+</navigation>

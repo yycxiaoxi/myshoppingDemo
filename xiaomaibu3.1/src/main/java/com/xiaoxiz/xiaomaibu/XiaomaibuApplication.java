@@ -1,0 +1,13 @@
+package com.xiaoxiz.xiaomaibu;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class XiaomaibuApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(XiaomaibuApplication.class, args);
+    }
+
+}

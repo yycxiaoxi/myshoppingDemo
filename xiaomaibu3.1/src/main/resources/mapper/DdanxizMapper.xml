@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.xiaoxiz.xiaomaibu.dao.DdanxizDao"    >
+    <!-- 填写数据库里实例Person对应的表的表名 -->
+    <!-- id属性填写Dao文件里的函数名称 xxType是参数或是结果的类型根据情况填写 -->
+    <!-- 查询所有   -->
+    <insert id="insert">
+        insert into xiaomaibu.Ddanxiz (xizehao,gid,orderno,gnum,gprice,total,status)
+        values(#{xizehao},#{gid},#{orderno},#{gnum},#{gprice},#{total},#{status})
+    </insert>
+    <delete id="delete">
+        delete from xiaomaibu.Ddanxiz where orderno = #{order_no}
+    </delete>
+    <update id="update">
+        update xiaomaibu.Ddanxiz set
+         status = #{status}
+         where xizehao = #{xizehao}
+    </update>
+    <select id="find" resultType="com.xiaoxiz.xiaomaibu.bean.Ddanxiz">
+        select * from xiaomaibu.Ddanxiz where xizehao=#{xizehao}
+    </select>
+    <select id="findall" resultType="com.xiaoxiz.xiaomaibu.bean.Ddanxiz">
+        select * from xiaomaibu.Ddanxiz where orderno=#{order_no}
+    </select>
+
+
+
+
+</mapper>

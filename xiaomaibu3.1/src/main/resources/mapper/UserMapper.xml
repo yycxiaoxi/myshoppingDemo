@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.xiaoxiz.xiaomaibu.dao.UserDao"    >
+    <!-- 填写数据库里实例Person对应的表的表名 -->
+    <!-- id属性填写Dao文件里的函数名称 xxType是参数或是结果的类型根据情况填写 -->
+    <!-- 查询所有   -->
+    <select id="getUser" resultType="com.xiaoxiz.xiaomaibu.bean.User">
+        SELECT * FROM User
+    </select>
+
+    <select id="Login" resultType="com.xiaoxiz.xiaomaibu.bean.User">
+        SELECT * FROM User where id=#{id}
+    </select>
+    <insert id="Register">
+        insert into user values (#{id},#{name},#{password},#{pnum},#{dress},#{email})
+    </insert>
+
+
+</mapper>

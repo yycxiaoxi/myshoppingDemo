@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/adminFirstFragment"
+        android:icon="@drawable/bag"
+        android:title="主页" />
+
+    <item
+        android:id="@+id/adminSecondFragment"
+        android:icon="@drawable/ma"
+        android:title="发货" />
+    <item
+        android:id="@+id/adminThirdFragment"
+        android:icon="@drawable/there"
+        android:title="到货" />
+    <item
+        android:id="@+id/adminFourthFragment"
+        android:icon="@drawable/there"
+        android:title="到货" />
+</menu>

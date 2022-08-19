@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.xiaoxiz.xiaomaibu.dao.GoodsDao"    >
+    <!-- 填写数据库里实例Person对应的表的表名 -->
+    <!-- id属性填写Dao文件里的函数名称 xxType是参数或是结果的类型根据情况填写 -->
+    <!-- 查询所有   -->
+    <insert id="insert">
+        insert into Goods (gid,aid,name,img,price,cost,num,sort)
+        values(#{gid},#{aid},#{name},#{img},#{price},#{cost},#{num},#{sort})
+    </insert>
+    <select id="findall" resultType="com.xiaoxiz.xiaomaibu.bean.Goods">
+        select * from Goods
+    </select>
+
+    <select id="find" resultType="com.xiaoxiz.xiaomaibu.bean.Goods">
+        select * from Goods where gid = #{gid}
+    </select>
+
+    <update id="update">
+        update  Goods set
+        aid=#{aid},name=#{name},img=#{img},price=#{price},cost=#{cost},num=#{num},sort=#{sort} where gid=#{gid}
+    </update>
+
+    <delete id="delete">
+        delete from Goods where gid=#{gid}
+    </delete>
+
+    <select id="findLike" resultType="com.xiaoxiz.xiaomaibu.bean.Goods">
+        select * from Goods where name like concat('%',#{name},'%')
+    </select>
+
+    <select id="findSort" resultType="com.xiaoxiz.xiaomaibu.bean.Goods">
+        select * from Goods where sort like concat('%',#{sort},'%')
+    </select>
+
+
+
+</mapper>

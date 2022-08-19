@@ -1,0 +1,134 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+
+    >
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="名称："></TextView>
+
+            <EditText
+                android:id="@+id/alter_goods_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="名称"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="售价"></TextView>
+
+            <EditText
+                android:id="@+id/alter_goods_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="售价"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+
+            <TextView
+                android:text="进货价"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+
+            <EditText
+                android:id="@+id/alter_goods_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="进货价"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数量"></TextView>
+
+            <EditText
+                android:id="@+id/alter_goods_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="数量"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="标签"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <EditText
+                android:id="@+id/alter_goods_sort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="标签"
+                android:imeOptions="actionUnspecified"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <TextView
+                android:text="封面"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <ImageView
+                android:padding="6dp"
+                android:id="@+id/alter_goods_iv"
+                android:layout_width="150dp"
+                android:layout_height="130dp"></ImageView>
+
+            <TextView
+                android:id="@+id/tv_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"></TextView>
+
+            <Button
+                android:id="@+id/alter_goods_blg_img"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="上传图片"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/alter_goods_blg_btn"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="修改商品"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.xiaoxiz.xiaomaibu.dao.PingjiaDao"    >
+    <!-- 填写数据库里实例Person对应的表的表名 -->
+    <!-- id属性填写Dao文件里的函数名称 xxType是参数或是结果的类型根据情况填写 -->
+    <!-- 查询所有   -->
+    <insert id="insertEva">
+        insert into PingJia (pingjiano,gid,xizehao,uid,info,time)
+        values(#{pingjiano},#{gid},#{xizehao},#{uid},#{info},#{time})
+    </insert>
+    <select id="findEva" resultType="com.xiaoxiz.xiaomaibu.bean.Pingjia">
+        select * from PingJia where pingjiano = #{eva_no}
+    </select>
+
+    <select id="find" resultType="com.xiaoxiz.xiaomaibu.bean.Pingjia">
+        select * from PingJia where gid = #{gid}
+    </select>
+
+    <update id="updateEva">
+        update  PingJia set
+       gid = #{gid}, xizehao = #{xizehao},uid = #{uid},info = #{info},time = #{time} where pingjiano = #{pingjiano}
+    </update>
+
+    <delete id="delEva">
+        delete from PingJia where pingjiano = #{pingjiano}
+    </delete>
+
+    <select id="findGEva" resultType="com.xiaoxiz.xiaomaibu.bean.Pingjia">
+        select * from PingJia where gid = #{gid}
+    </select>
+
+    <select id="findEvaByOrder" resultType="com.xiaoxiz.xiaomaibu.bean.Pingjia">
+        select * from PingJia where xizehao = #{xizehao}
+    </select>
+
+</mapper>

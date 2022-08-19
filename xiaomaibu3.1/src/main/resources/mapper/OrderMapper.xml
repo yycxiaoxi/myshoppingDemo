@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 这里填写对应的Dao文件所在的路径 -->
+<mapper namespace="com.xiaoxiz.xiaomaibu.dao.OrderDao"    >
+    <!-- 填写数据库里实例Person对应的表的表名 -->
+    <!-- id属性填写Dao文件里的函数名称 xxType是参数或是结果的类型根据情况填写 -->
+    <!-- 查询所有   -->
+    <insert id="insert">
+        insert into xiaomaibu.Order (orderno,id,createtime,paytime,sendtime,expname,artime,agrtime,status,total,out_trade_no)
+        values(#{orderno},#{id},#{createtime},#{paytime},#{sendtime},#{expname},#{artime},#{agrtime},#{status},#{total},#{out_trade_no})
+    </insert>
+    <delete id="delete">
+        delete from xiaomaibu.order where orderno = #{orderno}
+    </delete>
+    <update id="update">
+        update xiaomaibu.order set id = #{id}
+        ,   createtime = #{createtime}
+        ,   paytime = #{paytime}
+        ,   sendtime = #{sendtime}
+        ,   expname = #{expname}
+        ,   artime =    #{artime}
+        ,   agrtime =#{agrtime}
+        ,   status = #{status}
+        ,   total = #{total}
+        ,   out_trade_no=#{out_trade_no} where orderno = #{orderno}
+    </update>
+    <select id="find" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.Order where orderno=#{orderno}
+    </select>
+    <select id="findallnopay" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where id = #{uid}  and status = 0 and orderno not in (select orderno from Refund )
+    </select>
+    <select id="daifahuo" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where id = #{uid}  and status = 1 and orderno not in (select orderno from Refund )
+    </select>
+    <select id="daishouhuo" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where id = #{uid}  and (status = 2 or status = 3) and orderno not in (select orderno from Refund )
+    </select>
+    <select id="userdaipingjia" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where id = #{uid}  and status=4 and orderno not in (select orderno from Refund )
+    </select>
+    <select id="userrefund" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where id = #{uid} and orderno in (select orderno from refund)
+    </select>
+
+    <select id="out_trade_no" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where out_trade_no=#{out_trade_no} and orderno not in (select orderno from Refund)
+    </select>
+
+    <select id="daifahuoAll" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where status = 1 and orderno not in (select orderno from Refund )
+    </select>
+    <select id="daishouhuAll" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where status = 2 and orderno not in (select orderno from Refund )
+    </select>
+    <select id="refundAll" resultType="com.xiaoxiz.xiaomaibu.bean.Order">
+        select * from xiaomaibu.order where  orderno  in (select orderno from Refund where status='0')
+    </select>
+
+
+</mapper>
